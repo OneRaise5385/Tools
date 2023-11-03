@@ -1,26 +1,156 @@
 \documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
 
-\title{你好，world}
-\author{Jason}
+
+\title{Hello World Tex}
+\author{Yiju Zhang}
 \date{\today}
+
+%设置页边距
+\geometry{papersize={20cm,15cm}}
+\geometry{left=1cm,right=2cm,top=3cm,bottom=4cm}
+
+%页眉页脚
+\pagestyle{fancy}
+\lhead{Yiju Zhang}
+\chead{\today}
+\rhead{zh1372337794@163.com}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headwidth}{\textwidth}
+\renewcommand{\footrulewidth}{0pt}
+
+%段间距
+\addtolength{\parskip}{.4em}
+
+%行间距
+
 
 \begin{document}
 \maketitle
 \tableofcontents
 
+%-------------------------------
 \section{你好中国}
 BeiJing is the capital of China!
-
 \subsection{你好北京}
 北京是中国首都
 \subsubsection{你好东城}
 东城是北京的中心。
 \paragraph{天安门广场}
-在北京城中心
+is in the center of Beijing!
 \subparagraph{毛主席}
 在天安门广场中心
+\subsection{你好郑大}
+郑大是宇宙中心
 
-\subsection{你好山东}
-\paragraph{山东大学} 是山东最好的大学之一！
+%-------------------------------
+\section{插入数学公式}
+
+\subsection{插入公式}
+\paragraph{行内公式}
+$Einstein 's  E=mc^2$
+\paragraph{行间公式}
+\subparagraph{没有标号}
+\[Einstein 's  E=mc^2\]
+\subparagraph{有标号}
+\begin{equation}
+Einstein 's  E=mc^2
+\end{equation}
+\paragraph{根式与分式}
+$\sqrt{x}$, $\tfrac{1}{2}$
+\[\sqrt{x},\]
+\[\frac{1}{2}.\]
+
+\subsection{插入运算符}
+\subparagraph{普通运算符}
+\[\pm \; \times \; \div \; \cdot \; \cap \; \cup \;
+\geq \; \leq \; \neq \; \approx \; \equiv \]
+\subparagraph{大型运算符}
+\[\sum \; \prod \; \lim \; \int \]
+
+\subsection{复合}
+$ \sum_{i=1}^n i\quad \prod_{i=1}^n $
+$ \sum\limits _{i=1}^n i\quad \prod\limits _{i=1}^n $
+\[ \lim_{x\to0}x^2 \quad \int_a^b x^2 dx \]
+\[ \lim _{x\to0}x^2 \quad \int\nolimits_a^b x^2 dx \]
+\[ \iint\quad \iiint\quad \iiiint\quad \idotsint \]
+
+\subsection{定界符（括号）}
+\[ \Biggl( \biggl( \Bigl( \bigl( (x) \bigr) \Bigr) \biggr) \Biggr) \]
+\[ \Biggl[ \biggl[ \Bigl[ \bigl[ [x] \bigr] \Bigr] \biggr] \Biggr] \]
+\[ \Biggl\{ \biggl\{ \Bigl\{ \bigl\{ \{x\} \bigr\} \Bigr\} \biggr\} \Biggr\} \]
+\[ \Biggl\langle \langle x \rangle \Biggr \rangle \]
+\[ \Biggl\lvert x \Biggr\rvert \]
+\[ \Biggl\lVert x \Biggr\rVert \]
+
+\subsection{省略号}
+\[ x_1, x_2, \dots , x_n\quad 1, 2, \cdots ,n\quad \vdots\quad \ddots \]
+
+\subsection{矩阵}
+\[ \begin{pmatrix} a&b\\c&d \end{pmatrix} \quad
+\begin{bmatrix} a&b\\c&d \end{bmatrix} \quad
+\begin{Bmatrix} a&b\\c&d \end{Bmatrix} \quad
+\begin{vmatrix} a&b\\c&d \end{vmatrix} \quad
+\begin{Vmatrix} a&b&c\\c&d&e\\f&g&h \end{Vmatrix} \]
+Marry has a little matrix $ (\begin{smallmatrix} a&b\\c&d \end{smallmatrix} ) $.
+
+\subsection{多行公式}
+\paragraph{长公式}
+\begin{multline}
+x = a + b + c + {} \\
+d + e + f + g
+\end{multline}
+\begin{multline*}
+x = a + b + c + {} \\
+d + e + f + g
+\end{multline*}
+\[ \begin{aligned}
+x = {}& a+b+c+{} \\
+&d+e+f+g
+\end{aligned} \]
+\paragraph{公式组}
+\begin{gather}
+a = b+c+d \\
+x = y+z
+\end{gather}
+\begin{align}
+a &= b+c+d \\
+x &= y+z
+\end{align}
+
+\subsection{分段函数}
+\[ y = \begin{cases}
+-x, \quad x\leq 0 \\
+x, \quad x>0
+\end{cases} \]
+
+%------------------------------
+\section{插入图片和表格}
+
+\subsection{插入图片}
+\includegraphics[width = .8\textwidth]{zhangyiju.jpg}
+
+\subsection{插入表格}
+\begin{tabular}{|l|c|r|}
+ \hline
+操作系统 & 发行版 & 编辑器\\
+ \hline
+Windows & MikTex & TexMakerX\\
+ \hline
+\end{tabular}
+\subsection{浮动体}
+\begin{figure}[htbp]
+\centering
+\includegraphics{yiju.png}
+\caption{有图有真相}
+\label{fig:myphoto}
+\end{figure}
+
 
 \end{document}
