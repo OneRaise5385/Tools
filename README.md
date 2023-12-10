@@ -7,7 +7,7 @@
 ## GitLearning
 - Git教程
 
-## Spider
+## Scrapy
 - 爬虫教程
 
 ## Markdown
